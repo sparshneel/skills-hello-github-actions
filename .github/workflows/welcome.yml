@@ -1,0 +1,15 @@
+name: test workflow pull request
+on:
+  pull_request:
+    types:
+      - opened
+    branches:
+      - welcome-workflow
+permissions:
+  pull-requests: write
+jobs:
+  print_msg:
+    steps:
+      - name: print message
+        run: echo "build success"
+    runs-on: ubuntu-latest
