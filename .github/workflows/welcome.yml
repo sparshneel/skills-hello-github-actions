@@ -3,8 +3,6 @@ on:
   pull_request:
     types:
       - opened
-    branches:
-      - welcome-workflow
 permissions:
   pull-requests: write
 jobs:
