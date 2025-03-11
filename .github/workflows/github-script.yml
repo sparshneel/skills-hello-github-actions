@@ -1,0 +1,22 @@
+name: github-script
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  add_issue_comment:
+    runs-on: ubuntu-latest
+    uses: actions/github-script@0.8.0
+    with:
+      github-token: '${{ github.token }}'
+      script: |
+        github.issues.createComment({
+          owner: context.repo.owner
+          issue_number: context.issue.number
+          repo: context.repo
+          comment: "you have added a new issue card on the project board"
+        })
+      
+
+      
